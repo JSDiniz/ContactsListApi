@@ -1,18 +1,21 @@
-import {Request, Response, NextFunction} from "express"
-import AppDataSource from "../data-source"
-import { AppError } from "../errors/AppError"
-import { User } from "../entities/user.entities"
+import { Request, Response, NextFunction } from "express";
+import AppDataSource from "../data-source";
+import { AppError } from "../errors/AppError";
+import { User } from "../entities/user.entities";
 
-const userExistsMiddleware = async (req: Request, res: Response , next: NextFunction) => {
-    const {email} = req.body
-    const userRepo = AppDataSource.getRepository(User);
-    const userExist = await userRepo.findOneBy({ email: email });
-  
-    if (userExist) {
-      throw new AppError("User already exists!", 409);
-    }
+const userExistsMiddleware = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const userRepository = AppDataSource.getRepository(User);
+  const existsUser = await userRepository.findOneBy({ id: req.params.id });
 
-    return next()
-}
+  if (!existsUser) {
+    throw new AppError("Invalid User", 404);
+  }
 
-export default userExistsMiddleware
+  return next();
+};
+
+export default userExistsMiddleware;

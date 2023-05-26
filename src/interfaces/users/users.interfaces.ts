@@ -4,7 +4,6 @@ export interface IUserReq {
     password: string;
     phone: string;
     imageUrl: string;
-    isAdmin: boolean;
   }
 
   export interface IUserRes {

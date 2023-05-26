@@ -1,3 +1,4 @@
 import createUserService from "./users/createUser.service";
+import listUsersService from "./users/listUsers.service";
 
-export default createUserService
+export  {createUserService, listUsersService}

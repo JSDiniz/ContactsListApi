@@ -1,12 +1,33 @@
-import {Router} from "express"
-import {createUserController, listUsersController } from "../../controllers";
-import { adminAuthMiddleware, userExistsMiddleware, validDataMiddleware, validTokenMiddleware } from "../../middlewares";
+import { Router } from "express";
+import {
+  createUserController,
+  listUsersController,
+  userIdController,
+} from "../../controllers";
+import {
+  adminAuthMiddleware,
+  userExistsMiddleware,
+  validDataMiddleware,
+  validTokenMiddleware,
+} from "../../middlewares";
 import { userSchemasReq } from "../../schemas";
 
-const userRouter = Router()
+const userRouter = Router();
 
 userRouter.post("", validDataMiddleware(userSchemasReq), createUserController);
 
-userRouter.get("",validTokenMiddleware, adminAuthMiddleware, listUsersController);
+userRouter.get(
+  "",
+  validTokenMiddleware,
+  adminAuthMiddleware,
+  listUsersController
+);
 
-export default userRouter
+userRouter.get(
+  "/:id",
+  validTokenMiddleware,
+  userExistsMiddleware,
+  userIdController
+);
+
+export default userRouter;

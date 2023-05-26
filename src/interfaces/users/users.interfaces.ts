@@ -2,7 +2,19 @@ export interface IUserReq {
     name: string;
     email: string;
     password: string;
-    telephone: string;
+    phone: string;
     imageUrl: string;
     isAdmin: boolean;
+  }
+
+  export interface IUserRes {
+    id: string;
+    name: string;
+    email: string;
+    phone: string;
+    imageUrl: string;
+    isAdmin: boolean;
+    isActive: boolean;
+    createdAt: Date;
+    updatedAt: Date;
   }

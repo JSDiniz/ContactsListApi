@@ -16,7 +16,6 @@ const userSchemasReq: SchemaOf<IUserReq> = Yup.object().shape({
       .required("Telefone Obrigatorio")
       .matches(/^[0-9]([0-9]{8}|[0-9]{9})/, "Deve ser um número de telefone válido"),
     imageUrl: Yup.string().notRequired(),
-    isAdmin: Yup.boolean().notRequired(),
   });
 
   const userSchemasRes: SchemaOf<IUserRes> = Yup.object().shape({
@@ -31,4 +30,8 @@ const userSchemasReq: SchemaOf<IUserReq> = Yup.object().shape({
     id: Yup.string().notRequired(),
   });
 
-  export {userSchemasReq, userSchemasRes }
+  const allUsersSchema: SchemaOf<IUserRes[]> = Yup.array(
+    userSchemasRes
+  );
+
+  export {userSchemasReq, userSchemasRes, allUsersSchema }

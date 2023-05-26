@@ -1,4 +1,4 @@
 // Users
-import { userSchemasReq, userSchemasRes } from "./users/user.schemas";
+import { userSchemasReq, userSchemasRes, allUsersSchema } from "./users/user.schemas";
 
-export {userSchemasReq, userSchemasRes}
+export {userSchemasReq, userSchemasRes, allUsersSchema}

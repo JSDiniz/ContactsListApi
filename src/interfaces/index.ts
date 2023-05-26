@@ -1,3 +1,4 @@
-import { IUserReq } from "./users/users.interfaces";
+// Users
+import { IUserReq, IUserRes } from "./users/users.interfaces";
 
-export default IUserReq
+export  {IUserReq, IUserRes}

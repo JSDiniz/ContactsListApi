@@ -1,6 +1,10 @@
 import { Router } from "express";
-import { createContactController } from "../../controllers";
 import {
+  createContactController,
+  listContactsController,
+} from "../../controllers";
+import {
+  adminAuthMiddleware,
   contactExistMiddleware,
   validDataMiddleware,
   validTokenMiddleware,
@@ -15,6 +19,13 @@ contactRouter.post(
   validDataMiddleware(contactSchemaReq),
   contactExistMiddleware,
   createContactController
+);
+
+contactRouter.get(
+  "",
+  validTokenMiddleware,
+  adminAuthMiddleware,
+  listContactsController
 );
 
 export default contactRouter;

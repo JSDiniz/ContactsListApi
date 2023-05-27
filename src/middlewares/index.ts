@@ -6,6 +6,7 @@ import userIsActiveMiddleware from "./userIsActive.middleware";
 import verifyUserOrAdminMiddleware from "./verifyUserOrAdmin.middleware";
 import userDataUpdateMiddleware from "./userDataUpdate.middleware";
 import userUpdateIsActiveMiddleware from "./userUpdateIsActive.middleware";
+import contactExistMiddleware from "./contactExist.middleware";
 
 export {
   validDataMiddleware,
@@ -16,4 +17,5 @@ export {
   verifyUserOrAdminMiddleware,
   userDataUpdateMiddleware,
   userUpdateIsActiveMiddleware,
+  contactExistMiddleware,
 };

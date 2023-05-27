@@ -8,7 +8,7 @@ import userDataUpdateMiddleware from "./userDataUpdate.middleware";
 import userUpdateIsActiveMiddleware from "./userUpdateIsActive.middleware";
 import contactExistMiddleware from "./contactExist.middleware";
 import contactNotExistMiddleware from "./contactNotExist.middleware";
-import verifyContactIsFromUserMiddleware from "./verifyContactIsFromUser.middleware";
+import verifyYouOwnerTheContactOrAdminMiddleware from "./verifyContactIsFromUser.middleware";
 
 export {
   validDataMiddleware,
@@ -21,5 +21,5 @@ export {
   userUpdateIsActiveMiddleware,
   contactExistMiddleware,
   contactNotExistMiddleware,
-  verifyContactIsFromUserMiddleware,
+  verifyYouOwnerTheContactOrAdminMiddleware,
 };

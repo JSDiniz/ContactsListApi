@@ -3,17 +3,20 @@ import {
   createUserController,
   deleteUserController,
   listUsersController,
+  updateUserController,
   userIdController,
 } from "../../controllers";
 import {
   adminAuthMiddleware,
+  userDataUpdateMiddleware,
   userExistsMiddleware,
   userIsActiveMiddleware,
+  userUpdateIsActiveMiddleware,
   validDataMiddleware,
   validTokenMiddleware,
   verifyUserOrAdminMiddleware,
 } from "../../middlewares";
-import { userSchemasReq } from "../../schemas";
+import { updateUserSchemasReq, userSchemasReq } from "../../schemas";
 
 const userRouter = Router();
 
@@ -31,6 +34,17 @@ userRouter.get(
   validTokenMiddleware,
   userExistsMiddleware,
   userIdController
+);
+
+userRouter.patch(
+  "/:id",
+  validTokenMiddleware,
+  userDataUpdateMiddleware,
+  validDataMiddleware(updateUserSchemasReq),
+  userExistsMiddleware,
+  userUpdateIsActiveMiddleware,
+  verifyUserOrAdminMiddleware,
+  updateUserController
 );
 
 userRouter.delete(

@@ -6,4 +6,17 @@ import {
   updateUserSchemasReq,
 } from "./users/user.schemas";
 
-export { userSchemasReq, userSchemasRes, allUsersSchema, updateUserSchemasReq };
+// Contacts
+import {
+  contactSchemaReq,
+  contactSchemaRes,
+} from "./contacts/contacts.schemas";
+
+export {
+  userSchemasReq,
+  userSchemasRes,
+  allUsersSchema,
+  updateUserSchemasReq,
+  contactSchemaReq,
+  contactSchemaRes,
+};

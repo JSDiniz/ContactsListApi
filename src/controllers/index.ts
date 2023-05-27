@@ -8,6 +8,9 @@ import listUsersController from "./users/listUsers.controller";
 import updateUserController from "./users/updateUser.controller";
 import userIdController from "./users/userId.controller";
 
+// Contacts
+import createContactController from "./contacts/createContact.controller";
+
 export {
   sessionController,
   createUserController,
@@ -15,4 +18,5 @@ export {
   listUsersController,
   updateUserController,
   userIdController,
+  createContactController,
 };

@@ -3,13 +3,13 @@ import { User } from "../../entities/user.entities";
 import { Contacts } from "../../entities/contacts.entity";
 import createEmailsService from "../emails/createEmails.service";
 import createPhonesService from "../phones/createPhones.service";
-import { contactSchemaRes } from "../../schemas";
-import { IContactsReq, IContactsRes } from "../../interfaces";
+import { IContactsReq, IContactsuserRes } from "../../interfaces";
+import { contactUserSchemaRes } from "../../schemas";
 
-const createContactSevice = async (
+const createContactService = async (
   body: IContactsReq,
   userId: string
-): Promise<IContactsRes> => {
+): Promise<IContactsuserRes> => {
   const userRepository = AppDataSource.getRepository(User);
   const contactRepository = AppDataSource.getRepository(Contacts);
 
@@ -31,11 +31,11 @@ const createContactSevice = async (
 
   await contactRepository.save(contact);
 
-  const validContact = await contactSchemaRes.validate(contact, {
+  const validContact = await contactUserSchemaRes.validate(contact, {
     stripUnknown: true,
   });
 
   return validContact;
 };
 
-export default createContactSevice;
+export default createContactService;

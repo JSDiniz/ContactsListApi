@@ -1,16 +1,19 @@
 import { Router } from "express";
 import {
+  contactIdController,
   createContactController,
   listContactsController,
-  listContactsIdController,
+  listContactsUserController,
 } from "../../controllers";
 import {
   adminAuthMiddleware,
   contactExistMiddleware,
+  contactNotExistMiddleware,
   userExistsMiddleware,
   userIsActiveMiddleware,
   validDataMiddleware,
   validTokenMiddleware,
+  verifyContactIsFromUserMiddleware,
   verifyUserOrAdminMiddleware,
 } from "../../middlewares";
 import { contactSchemaReq } from "../../schemas";
@@ -33,12 +36,20 @@ contactRouter.get(
 );
 
 contactRouter.get(
-  "/:id",
+  "/:id/user",
   validTokenMiddleware,
   userExistsMiddleware,
   userIsActiveMiddleware,
   verifyUserOrAdminMiddleware,
-  listContactsIdController
+  listContactsUserController
+);
+
+contactRouter.get(
+  "/:id",
+  validTokenMiddleware,
+  contactNotExistMiddleware,
+  verifyContactIsFromUserMiddleware,
+  contactIdController
 );
 
 export default contactRouter;

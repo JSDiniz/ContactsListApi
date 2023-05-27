@@ -1,4 +1,9 @@
 // Users
-import { userSchemasReq, userSchemasRes, allUsersSchema } from "./users/user.schemas";
+import {
+  userSchemasReq,
+  userSchemasRes,
+  allUsersSchema,
+  updateUserSchemasReq,
+} from "./users/user.schemas";
 
-export {userSchemasReq, userSchemasRes, allUsersSchema}
+export { userSchemasReq, userSchemasRes, allUsersSchema, updateUserSchemasReq };

@@ -11,6 +11,7 @@ import userIdService from "./users/userId.service";
 // Contacts
 import createContactService from "./contacts/createContact.service";
 import listContactsService from "./contacts/listContacts.service";
+import listContactsIdService from "./contacts/listContactsId.service";
 
 export {
   sessionService,
@@ -21,4 +22,5 @@ export {
   userIdService,
   createContactService,
   listContactsService,
+  listContactsIdService,
 };

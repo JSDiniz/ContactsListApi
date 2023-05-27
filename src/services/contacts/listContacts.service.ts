@@ -3,7 +3,7 @@ import { Contacts } from "../../entities/contacts.entity";
 import { IContactsuserRes } from "../../interfaces";
 import { allsContactsSchema } from "../../schemas";
 
-const listContactsSevice = async (): Promise<IContactsuserRes[]> => {
+const listContactsService = async (): Promise<IContactsuserRes[]> => {
   const contactsRepository = AppDataSource.getRepository(Contacts);
 
   const contacts = await contactsRepository.find({
@@ -17,4 +17,4 @@ const listContactsSevice = async (): Promise<IContactsuserRes[]> => {
   return validContacts;
 };
 
-export default listContactsSevice;
+export default listContactsService;

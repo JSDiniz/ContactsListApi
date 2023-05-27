@@ -2,6 +2,7 @@ import { Router } from "express";
 import {
   contactIdController,
   createContactController,
+  deleteContactController,
   listContactsController,
   listContactsUserController,
 } from "../../controllers";
@@ -13,8 +14,8 @@ import {
   userIsActiveMiddleware,
   validDataMiddleware,
   validTokenMiddleware,
-  verifyContactIsFromUserMiddleware,
   verifyUserOrAdminMiddleware,
+  verifyYouOwnerTheContactOrAdminMiddleware,
 } from "../../middlewares";
 import { contactSchemaReq } from "../../schemas";
 
@@ -48,8 +49,16 @@ contactRouter.get(
   "/:id",
   validTokenMiddleware,
   contactNotExistMiddleware,
-  verifyContactIsFromUserMiddleware,
+  verifyYouOwnerTheContactOrAdminMiddleware,
   contactIdController
+);
+
+contactRouter.delete(
+  "/:id",
+  validTokenMiddleware,
+  contactNotExistMiddleware,
+  verifyYouOwnerTheContactOrAdminMiddleware,
+  deleteContactController
 );
 
 export default contactRouter;

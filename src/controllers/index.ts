@@ -10,6 +10,7 @@ import userIdController from "./users/userId.controller";
 
 // Contacts
 import createContactController from "./contacts/createContact.controller";
+import listContactsController from "./contacts/listContacts.controller";
 
 export {
   sessionController,
@@ -19,4 +20,5 @@ export {
   updateUserController,
   userIdController,
   createContactController,
+  listContactsController,
 };

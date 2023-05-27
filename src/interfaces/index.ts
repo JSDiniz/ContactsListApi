@@ -5,7 +5,11 @@ import { IUserReq, IUserRes, IUserUpdate } from "./users/users.interfaces";
 import { ISessionReq, ISessionRes } from "./session/session.interfaces";
 
 // Contacts
-import { IContactsReq, IContactsRes } from "./contacts/contacts.interfaces";
+import {
+  IContactsReq,
+  IContactsRes,
+  IContactsuserRes,
+} from "./contacts/contacts.interfaces";
 
 // Phones
 import { IPhonesReq, IPhonesRes } from "./phones/phones.interfaces";
@@ -21,6 +25,7 @@ export {
   ISessionRes,
   IContactsReq,
   IContactsRes,
+  IContactsuserRes,
   IPhonesReq,
   IPhonesRes,
   IEmailsReq,

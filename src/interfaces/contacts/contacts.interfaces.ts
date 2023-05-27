@@ -14,8 +14,11 @@ export interface IContactsRes {
   name: string;
   createdAt: Date;
   updatedAt: Date;
-  users: IUserRes;
   phones: Array<IPhonesRes>;
   emails: Array<IEmailsRes>;
   imageUrl: string;
+}
+
+export interface IContactsuserRes extends IContactsRes {
+  users: IUserRes;
 }

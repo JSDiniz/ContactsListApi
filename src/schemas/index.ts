@@ -8,8 +8,11 @@ import {
 
 // Contacts
 import {
+  allsContactsSchema,
   contactSchemaReq,
   contactSchemaRes,
+  contactUserSchemaRes,
+  contactsIdSchema,
 } from "./contacts/contacts.schemas";
 
 export {
@@ -19,4 +22,7 @@ export {
   updateUserSchemasReq,
   contactSchemaReq,
   contactSchemaRes,
+  contactUserSchemaRes,
+  allsContactsSchema,
+  contactsIdSchema,
 };

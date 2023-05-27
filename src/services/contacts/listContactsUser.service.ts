@@ -3,8 +3,8 @@ import { Contacts } from "../../entities/contacts.entity";
 import { IContactsRes } from "../../interfaces";
 import { contactsIdSchema } from "../../schemas";
 
-const listContactsIdService = async (
-  contactId: string
+const listContactsUserService = async (
+  userId: string
 ): Promise<IContactsRes[]> => {
   const contactRepository = AppDataSource.getRepository(Contacts);
 
@@ -12,7 +12,7 @@ const listContactsIdService = async (
     .createQueryBuilder("contacts")
     .innerJoinAndSelect("contacts.phones", "phones")
     .innerJoinAndSelect("contacts.emails", "emails")
-    .where("contacts.usersId = :usersId", { usersId: contactId })
+    .where("contacts.usersId = :usersId", { usersId: userId })
     .getMany();
 
   const validContacts = await contactsIdSchema.validate(contacts, {
@@ -22,4 +22,4 @@ const listContactsIdService = async (
   return validContacts;
 };
 
-export default listContactsIdService;
+export default listContactsUserService;

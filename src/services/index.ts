@@ -9,7 +9,8 @@ import updateUserService from "./users/updateUser.service";
 import userIdService from "./users/userId.service";
 
 // Contacts
-import createContactSevice from "./contacts/createContact.sevice";
+import createContactService from "./contacts/createContact.service";
+import listContactsService from "./contacts/listContacts.service";
 
 export {
   sessionService,
@@ -18,5 +19,6 @@ export {
   listUsersService,
   updateUserService,
   userIdService,
-  createContactSevice,
+  createContactService,
+  listContactsService,
 };

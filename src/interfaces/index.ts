@@ -1,7 +1,7 @@
 // Users
-import { IUserReq, IUserRes } from "./users/users.interfaces";
+import { IUserReq, IUserRes, IUserUpdate } from "./users/users.interfaces";
 
 //session
 import { ISessionReq, ISessionRes } from "./session/session.interfaces";
 
-export  {IUserReq, IUserRes, ISessionReq, ISessionRes}
+export { IUserReq, IUserRes, IUserUpdate, ISessionReq, ISessionRes };

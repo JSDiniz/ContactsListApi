@@ -13,6 +13,7 @@ import createContactController from "./contacts/createContact.controller";
 import listContactsController from "./contacts/listContacts.controller";
 import listContactsUserController from "./contacts/listContactsUser.controller";
 import contactIdController from "./contacts/contactId.controller";
+import deleteContactController from "./contacts/deleteContact.controller";
 
 export {
   sessionController,
@@ -25,4 +26,5 @@ export {
   listContactsController,
   listContactsUserController,
   contactIdController,
+  deleteContactController,
 };

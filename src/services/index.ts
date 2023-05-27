@@ -13,6 +13,7 @@ import createContactService from "./contacts/createContact.service";
 import listContactsService from "./contacts/listContacts.service";
 import listContactsUserService from "./contacts/listContactsUser.service";
 import contactIdService from "./contacts/contactId.service";
+import deleteContactService from "./contacts/deleteContact.service";
 
 export {
   sessionService,
@@ -25,4 +26,5 @@ export {
   listContactsService,
   listContactsUserService,
   contactIdService,
+  deleteContactService,
 };

@@ -16,6 +16,10 @@ import contactIdController from "./contacts/contactId.controller";
 import deleteContactController from "./contacts/deleteContact.controller";
 import updateContactController from "./contacts/updateContact.controller";
 
+// Emails
+import createEmailController from "./emails/createPhone.controller";
+import deleteEmailController from "./emails/deleteEmail.controller";
+
 export {
   sessionController,
   createUserController,
@@ -29,4 +33,6 @@ export {
   contactIdController,
   deleteContactController,
   updateContactController,
+  createEmailController,
+  deleteEmailController,
 };

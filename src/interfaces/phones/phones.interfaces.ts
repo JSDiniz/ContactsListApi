@@ -9,7 +9,7 @@ export interface IPhonesRes {
   updatedAt: Date;
 }
 
-export interface IUpdatePhones {
+export interface IPhones {
   id: string;
   phone: string;
 }

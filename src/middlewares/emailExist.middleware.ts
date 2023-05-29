@@ -16,9 +16,7 @@ const emailExistMiddleware = async (
     .where("contacts.id = :id", { id: req.params.id })
     .getOne();
 
-  const email = contact.emails.find(
-    (email) => email.email === req.body[0].email
-  );
+  const email = contact.emails.find((elem) => elem.email === req.body[0].email);
 
   if (email) {
     throw new AppError("Email already exists", 401);

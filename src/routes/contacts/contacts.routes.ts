@@ -5,6 +5,7 @@ import {
   deleteContactController,
   listContactsController,
   listContactsUserController,
+  updateContactController,
 } from "../../controllers";
 import {
   adminAuthMiddleware,
@@ -17,7 +18,7 @@ import {
   verifyUserOrAdminMiddleware,
   verifyYouOwnerTheContactOrAdminMiddleware,
 } from "../../middlewares";
-import { contactSchemaReq } from "../../schemas";
+import { contactSchemaReq, updatecontactSchemasReq } from "../../schemas";
 
 const contactRouter = Router();
 
@@ -51,6 +52,14 @@ contactRouter.get(
   contactNotExistMiddleware,
   verifyYouOwnerTheContactOrAdminMiddleware,
   contactIdController
+);
+
+contactRouter.patch(
+  "/:id",
+  contactNotExistMiddleware,
+  validDataMiddleware(updatecontactSchemasReq),
+  verifyYouOwnerTheContactOrAdminMiddleware,
+  updateContactController
 );
 
 contactRouter.delete(

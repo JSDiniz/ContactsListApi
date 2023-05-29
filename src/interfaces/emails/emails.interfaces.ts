@@ -8,3 +8,8 @@ export interface IEmailsRes {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface IUpdateEmailsRes {
+  id: string;
+  email: string;
+}

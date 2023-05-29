@@ -5,6 +5,7 @@ import handleError from "./errors/handleError";
 import {
   contactRouter,
   emailRouter,
+  phoneRouter,
   sessionRouter,
   userRouter,
 } from "./routes";
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use("/users", userRouter);
 app.use("/session", sessionRouter);
 app.use("/contacts", contactRouter);
+app.use("/phones", phoneRouter);
 app.use("/emails", emailRouter);
 
 app.use(handleError);

@@ -25,6 +25,7 @@ import {
 
 // Emails
 import {
+  emailsSchema,
   emailsSchemaReq,
   emailsSchemaRes,
   updateEmailsSchemaReq,
@@ -47,4 +48,5 @@ export {
   emailsSchemaReq,
   emailsSchemaRes,
   updateEmailsSchemaReq,
+  emailsSchema,
 };

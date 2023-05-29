@@ -19,6 +19,8 @@ import updateContactService from "./contacts/updateContact.service";
 // Emails
 import createEmailsService from "./emails/createEmails.service";
 import deleteEmailService from "./emails/deleteEmail.service";
+import createPhonesService from "./phones/createPhones.service";
+import deletePhoneService from "./phones/deletePhone.service";
 
 export {
   sessionService,
@@ -33,6 +35,8 @@ export {
   contactIdService,
   deleteContactService,
   updateContactService,
+  createPhonesService,
+  deletePhoneService,
   createEmailsService,
   deleteEmailService,
 };

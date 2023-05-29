@@ -15,9 +15,9 @@ const createContactService = async (
 
   const user = await userRepository.findOneBy({ id: userId });
 
-  const arryPhones = await createPhonesService(body.phones);
+  const arryPhones = await createPhonesService(body.phones, "");
 
-  const arryEmils = await createEmailsService(body.emails);
+  const arryEmils = await createEmailsService(body.emails, "");
 
   Reflect.deleteProperty(body, "phones");
   Reflect.deleteProperty(body, "emails");

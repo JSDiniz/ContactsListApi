@@ -3,13 +3,13 @@ import { User } from "../../entities/user.entities";
 import { Contacts } from "../../entities/contacts.entity";
 import createEmailsService from "../emails/createEmails.service";
 import createPhonesService from "../phones/createPhones.service";
-import { IContactsReq, IContactsuserRes } from "../../interfaces";
-import { contactUserSchemaRes } from "../../schemas";
+import { IContactsReq, IContactsRes } from "../../interfaces";
+import { contactSchemaRes } from "../../schemas";
 
 const createContactService = async (
   body: IContactsReq,
   userId: string
-): Promise<IContactsuserRes> => {
+): Promise<IContactsRes> => {
   const userRepository = AppDataSource.getRepository(User);
   const contactRepository = AppDataSource.getRepository(Contacts);
 
@@ -31,7 +31,7 @@ const createContactService = async (
 
   await contactRepository.save(contact);
 
-  const validContact = await contactUserSchemaRes.validate(contact, {
+  const validContact = await contactSchemaRes.validate(contact, {
     stripUnknown: true,
   });
 

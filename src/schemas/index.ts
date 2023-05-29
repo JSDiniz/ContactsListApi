@@ -18,6 +18,7 @@ import {
 
 // Phones
 import {
+  phonesSchema,
   phonesSchemaReq,
   phonesSchemaRes,
   updatePhonesSchemaRes,
@@ -45,6 +46,7 @@ export {
   phonesSchemaReq,
   phonesSchemaRes,
   updatePhonesSchemaRes,
+  phonesSchema,
   emailsSchemaReq,
   emailsSchemaRes,
   updateEmailsSchemaReq,

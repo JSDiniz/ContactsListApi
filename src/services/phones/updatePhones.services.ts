@@ -1,7 +1,8 @@
 import AppDataSource from "../../data-source";
 import { Phones } from "../../entities/phones.entity";
+import { IPhones } from "../../interfaces";
 
-const updatePhonesServices = async (body: any[]) => {
+const updatePhonesServices = async (body: IPhones[]) => {
   const phonesRepository = AppDataSource.getRepository(Phones);
 
   const phonesPromises = body.map(async (elem) => {

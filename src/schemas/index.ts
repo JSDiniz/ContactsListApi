@@ -13,7 +13,22 @@ import {
   contactSchemaRes,
   contactUserSchemaRes,
   contactsIdSchema,
+  updatecontactSchemasReq,
 } from "./contacts/contacts.schemas";
+
+// Phones
+import {
+  phonesSchemaReq,
+  phonesSchemaRes,
+  updatePhonesSchemaRes,
+} from "./phones/phones.schemas";
+
+// Emails
+import {
+  emailsSchemaReq,
+  emailsSchemaRes,
+  updateEmailsSchemaReq,
+} from "./emails/emails.schemas";
 
 export {
   userSchemasReq,
@@ -25,4 +40,11 @@ export {
   contactUserSchemaRes,
   allsContactsSchema,
   contactsIdSchema,
+  updatecontactSchemasReq,
+  phonesSchemaReq,
+  phonesSchemaRes,
+  updatePhonesSchemaRes,
+  emailsSchemaReq,
+  emailsSchemaRes,
+  updateEmailsSchemaReq,
 };

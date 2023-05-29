@@ -1,8 +1,21 @@
 import * as Yup from "yup";
 import { SchemaOf } from "yup";
-import { IContactsReq, IContactsRes, IContactsuserRes } from "../../interfaces";
-import { phonesSchemaReq, phonesSchemaRes } from "../phones/phones.schemas";
-import { emailsSchemaReq, emailsSchemaRes } from "../emails/emails.schemas";
+import {
+  IContactsReq,
+  IContactsRes,
+  IContactsuserRes,
+  IUpdateContact,
+} from "../../interfaces";
+import {
+  phonesSchemaReq,
+  phonesSchemaRes,
+  updatePhonesSchemaRes,
+} from "../phones/phones.schemas";
+import {
+  emailsSchemaReq,
+  emailsSchemaRes,
+  updateEmailsSchemaReq,
+} from "../emails/emails.schemas";
 import { userSchemasRes } from "../users/user.schemas";
 
 const contactSchemaReq: SchemaOf<IContactsReq> = Yup.object().shape({
@@ -33,10 +46,19 @@ const allsContactsSchema: SchemaOf<IContactsuserRes[]> =
 
 const contactsIdSchema: SchemaOf<IContactsRes[]> = Yup.array(contactSchemaRes);
 
+const updatecontactSchemasReq: SchemaOf<IUpdateContact> = Yup.object().shape({
+  imageUrl: Yup.string().nullable().notRequired(),
+  emails: Yup.array().of(updateEmailsSchemaReq).notRequired(),
+  phones: Yup.array().of(updatePhonesSchemaRes).notRequired(),
+  name: Yup.string().notRequired(),
+  id: Yup.string().notRequired(),
+});
+
 export {
   contactSchemaReq,
   contactSchemaRes,
   contactUserSchemaRes,
   allsContactsSchema,
   contactsIdSchema,
+  updatecontactSchemasReq,
 };

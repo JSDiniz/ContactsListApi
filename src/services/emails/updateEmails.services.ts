@@ -1,7 +1,8 @@
 import AppDataSource from "../../data-source";
 import { Emails } from "../../entities/emails.entity";
+import { IEmails } from "../../interfaces";
 
-const updateEmailsServices = async (body: any[]) => {
+const updateEmailsServices = async (body: IEmails[]) => {
   const emailRepository = AppDataSource.getRepository(Emails);
 
   const emailsPromises = body.map(async (elem) => {

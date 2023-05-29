@@ -9,13 +9,22 @@ import {
   IContactsReq,
   IContactsRes,
   IContactsuserRes,
+  IUpdateContact,
 } from "./contacts/contacts.interfaces";
 
 // Phones
-import { IPhonesReq, IPhonesRes } from "./phones/phones.interfaces";
+import {
+  IPhonesReq,
+  IPhonesRes,
+  IUpdatePhones,
+} from "./phones/phones.interfaces";
 
 // Emails
-import { IEmailsReq, IEmailsRes } from "./emails/emails.interfaces";
+import {
+  IEmailsReq,
+  IEmailsRes,
+  IUpdateEmailsRes,
+} from "./emails/emails.interfaces";
 
 export {
   IUserReq,
@@ -26,8 +35,11 @@ export {
   IContactsReq,
   IContactsRes,
   IContactsuserRes,
+  IUpdateContact,
   IPhonesReq,
+  IUpdatePhones,
   IPhonesRes,
   IEmailsReq,
   IEmailsRes,
+  IUpdateEmailsRes,
 };

@@ -16,6 +16,10 @@ import contactIdService from "./contacts/contactId.service";
 import deleteContactService from "./contacts/deleteContact.service";
 import updateContactService from "./contacts/updateContact.service";
 
+// Emails
+import createEmailsService from "./emails/createEmails.service";
+import deleteEmailService from "./emails/deleteEmail.service";
+
 export {
   sessionService,
   createUserService,
@@ -29,4 +33,6 @@ export {
   contactIdService,
   deleteContactService,
   updateContactService,
+  createEmailsService,
+  deleteEmailService,
 };

@@ -13,18 +13,10 @@ import {
 } from "./contacts/contacts.interfaces";
 
 // Phones
-import {
-  IPhonesReq,
-  IPhonesRes,
-  IUpdatePhones,
-} from "./phones/phones.interfaces";
+import { IPhonesReq, IPhonesRes, IPhones } from "./phones/phones.interfaces";
 
 // Emails
-import {
-  IEmailsReq,
-  IEmailsRes,
-  IUpdateEmailsRes,
-} from "./emails/emails.interfaces";
+import { IEmailsReq, IEmailsRes, IEmails } from "./emails/emails.interfaces";
 
 export {
   IUserReq,
@@ -37,9 +29,9 @@ export {
   IContactsuserRes,
   IUpdateContact,
   IPhonesReq,
-  IUpdatePhones,
+  IPhones,
   IPhonesRes,
   IEmailsReq,
   IEmailsRes,
-  IUpdateEmailsRes,
+  IEmails,
 };

@@ -9,7 +9,7 @@ export interface IEmailsRes {
   updatedAt: Date;
 }
 
-export interface IUpdateEmailsRes {
+export interface IEmails {
   id: string;
   email: string;
 }

@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import { SchemaOf } from "yup";
 import { ISessionReq, IUser } from "../../interfaces";
-import { updatecontactSchemasReq } from "../contacts/contacts.schemas";
+import { contactSchemas } from "../contacts/contacts.schemas";
 
 const sessionSchemaReq: SchemaOf<ISessionReq> = yup.object().shape({
   email: yup.string().email("Must be a valid email").max(60).required(),
@@ -9,7 +9,7 @@ const sessionSchemaReq: SchemaOf<ISessionReq> = yup.object().shape({
 });
 
 const sessionSchemaRes: SchemaOf<IUser> = yup.object().shape({
-  contacts: yup.array(updatecontactSchemasReq).notRequired(),
+  contacts: yup.array(contactSchemas).notRequired(),
   name: yup.string().notRequired(),
   id: yup.string().notRequired(),
 });

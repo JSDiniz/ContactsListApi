@@ -51,7 +51,6 @@ const updatecontactSchemasReq: SchemaOf<IUpdateContact> = Yup.object().shape({
   emails: Yup.array().of(updateEmailsSchemaReq).notRequired(),
   phones: Yup.array().of(updatePhonesSchemaRes).notRequired(),
   name: Yup.string().notRequired(),
-  id: Yup.string().notRequired(),
 });
 
 export {

@@ -1,6 +1,7 @@
 import * as Yup from "yup";
 import { SchemaOf } from "yup";
 import {
+  IContact,
   IContactsReq,
   IContactsRes,
   IContactsuserRes,
@@ -53,6 +54,14 @@ const updatecontactSchemasReq: SchemaOf<IUpdateContact> = Yup.object().shape({
   name: Yup.string().notRequired(),
 });
 
+const contactSchemas: SchemaOf<IContact> = Yup.object().shape({
+  imageUrl: Yup.string().nullable().notRequired(),
+  emails: Yup.array().of(updateEmailsSchemaReq).notRequired(),
+  phones: Yup.array().of(updatePhonesSchemaRes).notRequired(),
+  name: Yup.string().notRequired(),
+  id: Yup.string().notRequired(),
+});
+
 export {
   contactSchemaReq,
   contactSchemaRes,
@@ -60,4 +69,5 @@ export {
   allsContactsSchema,
   contactsIdSchema,
   updatecontactSchemasReq,
+  contactSchemas,
 };

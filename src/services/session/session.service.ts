@@ -11,7 +11,7 @@ const sessionService = async (body: ISessionReq): Promise<ISessionRes> => {
   const userRepository = AppDataSource.getRepository(User);
   const findUser = await userRepository.findOne({
     where: { email: body.email },
-    relations: ["contacts"],
+    relations: ["contacts", "contacts.emails", "contacts.phones"],
   });
 
   if (!findUser) {

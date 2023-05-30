@@ -56,6 +56,7 @@ contactRouter.get(
 
 contactRouter.patch(
   "/:id",
+  validTokenMiddleware,
   contactNotExistMiddleware,
   validDataMiddleware(updatecontactSchemasReq),
   verifyYouOwnerTheContactOrAdminMiddleware,

@@ -1,5 +1,4 @@
-import { IUserRes } from "../users/users.interfaces";
-
+import { IUser } from "../users/users.interfaces";
 
 export interface ISessionReq {
   email: string;
@@ -8,5 +7,5 @@ export interface ISessionReq {
 
 export interface ISessionRes {
   token: string;
-  user: IUserRes;
+  user: IUser;
 }

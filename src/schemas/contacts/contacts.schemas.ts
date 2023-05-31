@@ -40,11 +40,22 @@ const contactSchemaRes: SchemaOf<IContactsRes> = Yup.object().shape({
   id: Yup.string().notRequired(),
 });
 
-const contactUserSchemaRes: SchemaOf<IContactsuserRes> = contactSchemaRes.shape(
-  {
-    users: userSchemasRes,
-  }
-);
+const contactUserSchemaRes: SchemaOf<IContactsuserRes> = Yup.object().shape({
+  emails: Yup.array().of(emailsSchemaRes).notRequired(),
+  phones: Yup.array().of(phonesSchemaRes).notRequired(),
+  users: Yup.object().shape({
+    email: Yup.string().email().notRequired(),
+    name: Yup.string().notRequired(),
+    id: Yup.string().notRequired(),
+  }),
+  createdAt: Yup.date().notRequired(),
+  updatedAt: Yup.date().notRequired(),
+  imageUrl: Yup.string().notRequired().nullable(true),
+  githubUrl: Yup.string().notRequired().nullable(true),
+  linkedinUrl: Yup.string().notRequired().nullable(true),
+  name: Yup.string().notRequired(),
+  id: Yup.string().notRequired(),
+});
 
 const allsContactsSchema: SchemaOf<IContactsuserRes[]> =
   Yup.array(contactUserSchemaRes);

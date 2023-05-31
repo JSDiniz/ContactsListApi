@@ -9,10 +9,10 @@ const userExistsMiddleware = async (
   next: NextFunction
 ) => {
   const userRepository = AppDataSource.getRepository(User);
-  const existsUser = await userRepository.findOneBy({ id: req.params.id });
+  const existsUser = await userRepository.findOneBy({ email: req.body.email });
 
-  if (!existsUser) {
-    throw new AppError("Invalid User", 404);
+  if (existsUser) {
+    throw new AppError("User already exists", 409);
   }
 
   return next();

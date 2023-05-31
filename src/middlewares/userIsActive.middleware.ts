@@ -8,10 +8,11 @@ const userIsActiveMiddleware = async (
   res: Response,
   next: NextFunction
 ) => {
+  const admin = req.user.isAdmin;
   const userRepository = AppDataSource.getRepository(User);
   const user = await userRepository.findOneBy({ id: req.params.id });
 
-  if (!user.isActive) {
+  if (!user.isActive && !admin) {
     throw new AppError("User is not active", 400);
   }
 

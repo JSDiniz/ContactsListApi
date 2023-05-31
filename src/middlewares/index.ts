@@ -12,6 +12,7 @@ import emailExistMiddleware from "./emailExist.middleware";
 import emailNotExistMiddleware from "./emailNotExist.middleware";
 import phoneExistMiddleware from "./phoneExist.middleware";
 import phoneNotExistMiddleware from "./phoneNotExist.middleware";
+import updateUserIsActiveOrAdminMiddleware from "./updateUserIsActiveOrAdmin.middleware";
 
 export {
   validDataMiddleware,
@@ -21,6 +22,7 @@ export {
   userIsActiveMiddleware,
   verifyUserOrAdminMiddleware,
   userDataUpdateMiddleware,
+  updateUserIsActiveOrAdminMiddleware,
   contactExistMiddleware,
   contactNotExistMiddleware,
   verifyYouOwnerTheContactOrAdminMiddleware,

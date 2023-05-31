@@ -8,6 +8,7 @@ import {
 } from "../../controllers";
 import {
   adminAuthMiddleware,
+  updateUserIsActiveOrAdminMiddleware,
   userDataUpdateMiddleware,
   userExistsMiddleware,
   userIsActiveMiddleware,
@@ -43,7 +44,7 @@ userRouter.patch(
   userDataUpdateMiddleware,
   validDataMiddleware(updateUserSchemasReq),
   userExistsMiddleware,
-  userIsActiveMiddleware,
+  updateUserIsActiveOrAdminMiddleware,
   verifyUserOrAdminMiddleware,
   updateUserController
 );

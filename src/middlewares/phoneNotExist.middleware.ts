@@ -13,7 +13,7 @@ const phoneNotExistMiddleware = async (
   const Phone = await phoneRepository.findOneBy({ id: req.params.id });
 
   if (!Phone) {
-    throw new AppError("Phone does not exist!", 409);
+    throw new AppError("Phone does not exist!", 404);
   }
 
   return next();

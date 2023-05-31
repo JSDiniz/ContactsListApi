@@ -12,7 +12,7 @@ const contactNotExistMiddleware = async (
   const findContact = await contactRepository.findOneBy({ id: req.params.id });
 
   if (!findContact) {
-    throw new AppError("Contact does not exist!", 409);
+    throw new AppError("Contact does not exist!", 404);
   }
 
   return next();

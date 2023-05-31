@@ -11,8 +11,8 @@ import {
   adminAuthMiddleware,
   contactExistMiddleware,
   contactNotExistMiddleware,
-  userExistsMiddleware,
   userIsActiveMiddleware,
+  userNotExistsMiddleware,
   validDataMiddleware,
   validTokenMiddleware,
   verifyUserOrAdminMiddleware,
@@ -40,7 +40,7 @@ contactRouter.get(
 contactRouter.get(
   "/:id/user",
   validTokenMiddleware,
-  userExistsMiddleware,
+  userNotExistsMiddleware,
   userIsActiveMiddleware,
   verifyUserOrAdminMiddleware,
   listContactsUserController

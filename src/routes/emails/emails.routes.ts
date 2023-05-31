@@ -16,7 +16,7 @@ import { emailsSchema } from "../../schemas";
 const emailRouter = Router();
 
 emailRouter.post(
-  "/:id",
+  "/:id/contact",
   validTokenMiddleware,
   validDataMiddleware(emailsSchema),
   contactNotExistMiddleware,

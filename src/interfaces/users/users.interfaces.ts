@@ -1,4 +1,4 @@
-import { IContact } from "../contacts/contacts.interfaces";
+import { IContact, IContactsRes } from "../contacts/contacts.interfaces";
 
 export interface IUserReq {
   name: string;
@@ -34,4 +34,8 @@ export interface IUser {
   id: string;
   name: string;
   contacts: Array<IContact>;
+}
+
+export interface IUserContacts extends IUserRes {
+  contacts: Array<IContactsRes>;
 }

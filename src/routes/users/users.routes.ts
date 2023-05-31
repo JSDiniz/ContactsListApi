@@ -11,7 +11,6 @@ import {
   userDataUpdateMiddleware,
   userExistsMiddleware,
   userIsActiveMiddleware,
-  userUpdateIsActiveMiddleware,
   validDataMiddleware,
   validTokenMiddleware,
   verifyUserOrAdminMiddleware,
@@ -33,6 +32,8 @@ userRouter.get(
   "/:id",
   validTokenMiddleware,
   userExistsMiddleware,
+  userIsActiveMiddleware,
+  verifyUserOrAdminMiddleware,
   userIdController
 );
 
@@ -42,7 +43,7 @@ userRouter.patch(
   userDataUpdateMiddleware,
   validDataMiddleware(updateUserSchemasReq),
   userExistsMiddleware,
-  userUpdateIsActiveMiddleware,
+  userIsActiveMiddleware,
   verifyUserOrAdminMiddleware,
   updateUserController
 );

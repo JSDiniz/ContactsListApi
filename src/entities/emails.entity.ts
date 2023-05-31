@@ -2,7 +2,7 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  ManyToMany,
+  ManyToOne,
   CreateDateColumn,
   UpdateDateColumn,
   BeforeInsert,
@@ -28,7 +28,7 @@ class Emails {
     this.email = this.email.toLocaleLowerCase();
   }
 
-  @ManyToMany(() => Contacts, (contacts) => contacts.emails, {
+  @ManyToOne(() => Contacts, (contacts) => contacts.emails, {
     onDelete: "CASCADE",
   })
   contacts: Contacts[];

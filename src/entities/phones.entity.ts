@@ -4,7 +4,7 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
-  ManyToMany,
+  ManyToOne,
 } from "typeorm";
 import { Contacts } from "./contacts.entity";
 
@@ -22,7 +22,7 @@ class Phones {
   @UpdateDateColumn({ type: "date" })
   updatedAt: Date;
 
-  @ManyToMany(() => Contacts, (contacts) => contacts.phones, {
+  @ManyToOne(() => Contacts, (contacts) => contacts.phones, {
     onDelete: "CASCADE",
   })
   contacts: Contacts[];

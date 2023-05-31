@@ -5,7 +5,7 @@ export interface IUserReq {
   email: string;
   password: string;
   phone: string;
-  imageUrl: string;
+  imageUrl?: string | null | undefined;
 }
 
 export interface IUserRes {
@@ -13,7 +13,7 @@ export interface IUserRes {
   name: string;
   email: string;
   phone: string;
-  imageUrl: string;
+  imageUrl?: string | null | undefined;
   isAdmin: boolean;
   isActive: boolean;
   createdAt: Date;
@@ -25,7 +25,7 @@ export interface IUserUpdate {
   email?: string;
   password?: string;
   phone?: string;
-  imageUrl?: string;
+  imageUrl?: string | null | undefined;
   isAdmin?: boolean;
   isActive?: boolean;
 }

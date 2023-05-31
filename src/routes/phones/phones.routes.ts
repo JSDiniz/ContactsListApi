@@ -16,7 +16,7 @@ import { phonesSchema } from "../../schemas";
 const phoneRouter = Router();
 
 phoneRouter.post(
-  "/:id",
+  "/:id/contact",
   validTokenMiddleware,
   validDataMiddleware(phonesSchema),
   contactNotExistMiddleware,

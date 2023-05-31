@@ -13,10 +13,12 @@ import emailNotExistMiddleware from "./emailNotExist.middleware";
 import phoneExistMiddleware from "./phoneExist.middleware";
 import phoneNotExistMiddleware from "./phoneNotExist.middleware";
 import updateUserIsActiveOrAdminMiddleware from "./updateUserIsActiveOrAdmin.middleware";
+import userNotExistsMiddleware from "./userNotExist.middleware";
 
 export {
   validDataMiddleware,
   userExistsMiddleware,
+  userNotExistsMiddleware,
   validTokenMiddleware,
   adminAuthMiddleware,
   userIsActiveMiddleware,

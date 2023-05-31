@@ -5,8 +5,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   ManyToOne,
-  ManyToMany,
-  JoinTable,
+  OneToMany,
   BeforeInsert,
 } from "typeorm";
 import { User } from "./user.entities";
@@ -24,6 +23,12 @@ class Contacts {
   @Column({ nullable: true })
   imageUrl: string;
 
+  @Column({ nullable: true })
+  githubUrl: string;
+
+  @Column({ nullable: true })
+  linkedinUrl: string;
+
   @CreateDateColumn({ type: "date" })
   createdAt: Date;
 
@@ -40,16 +45,10 @@ class Contacts {
   @ManyToOne(() => User, (users) => users.contacts)
   users: User;
 
-  @ManyToMany(() => Phones, (phones) => phones.contacts, {
-    onDelete: "CASCADE",
-  })
-  @JoinTable()
+  @OneToMany(() => Phones, (phones) => phones.contacts)
   phones: Phones[];
 
-  @ManyToMany(() => Emails, (emails) => emails.contacts, {
-    onDelete: "CASCADE",
-  })
-  @JoinTable()
+  @OneToMany(() => Emails, (emails) => emails.contacts)
   emails: Emails[];
 }
 

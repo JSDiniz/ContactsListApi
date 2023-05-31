@@ -4,6 +4,7 @@ import {
   userSchemasRes,
   allUsersSchema,
   updateUserSchemasReq,
+  userContactSchema,
 } from "./users/user.schemas";
 
 // Session
@@ -38,6 +39,7 @@ import {
 export {
   userSchemasReq,
   userSchemasRes,
+  userContactSchema,
   allUsersSchema,
   updateUserSchemasReq,
   sessionSchemaReq,

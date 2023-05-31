@@ -38,7 +38,7 @@ const contactSchemaRes: SchemaOf<IContactsRes> = Yup.object().shape({
 
 const contactUserSchemaRes: SchemaOf<IContactsuserRes> = contactSchemaRes.shape(
   {
-    users: userSchemasRes.notRequired(),
+    users: userSchemasRes,
   }
 );
 

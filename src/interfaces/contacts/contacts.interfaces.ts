@@ -1,6 +1,6 @@
 import { IEmails, IEmailsReq, IEmailsRes } from "../emails/emails.interfaces";
 import { IPhones, IPhonesReq, IPhonesRes } from "../phones/phones.interfaces";
-import { IUserRes } from "../users/users.interfaces";
+import { IUserContactsAdmin } from "../users/users.interfaces";
 
 export interface IContactsReq {
   name: string;
@@ -24,7 +24,7 @@ export interface IContactsRes {
 }
 
 export interface IContactsuserRes extends IContactsRes {
-  users: IUserRes;
+  users: IUserContactsAdmin;
 }
 
 export interface IUpdateContact {

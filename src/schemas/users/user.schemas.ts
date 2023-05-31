@@ -25,7 +25,7 @@ const userSchemasReq: SchemaOf<IUserReq> = Yup.object().shape({
       /^[0-9]([0-9]{8}|[0-9]{9})/,
       "Deve ser um número de telefone válido"
     ),
-  imageUrl: Yup.string().notRequired(),
+  imageUrl: Yup.string().notRequired().nullable(true),
 });
 
 const userSchemasRes: SchemaOf<IUserRes> = Yup.object().shape({
@@ -33,7 +33,7 @@ const userSchemasRes: SchemaOf<IUserRes> = Yup.object().shape({
   createdAt: Yup.date().notRequired(),
   isActive: Yup.boolean().notRequired(),
   isAdmin: Yup.boolean().notRequired(),
-  imageUrl: Yup.string().nullable().notRequired(),
+  imageUrl: Yup.string().notRequired().nullable(true),
   phone: Yup.string().notRequired(),
   email: Yup.string().email().notRequired(),
   name: Yup.string().notRequired(),
@@ -46,7 +46,7 @@ const userContactSchema: SchemaOf<IUserContacts> = Yup.object().shape({
   createdAt: Yup.date().notRequired(),
   isActive: Yup.boolean().notRequired(),
   isAdmin: Yup.boolean().notRequired(),
-  imageUrl: Yup.string().nullable().notRequired(),
+  imageUrl: Yup.string().notRequired().nullable(true),
   phone: Yup.string().notRequired(),
   email: Yup.string().email().notRequired(),
   name: Yup.string().notRequired(),
@@ -69,7 +69,7 @@ const updateUserSchemasReq: SchemaOf<IUserUpdate> = Yup.object().shape({
       /^[0-9]([0-9]{8}|[0-9]{9})/,
       "Deve ser um número de telefone válido"
     ),
-  imageUrl: Yup.string().notRequired(),
+  imageUrl: Yup.string().notRequired().nullable(true),
   isAdmin: Yup.boolean().notRequired(),
   isActive: Yup.boolean().notRequired(),
 });

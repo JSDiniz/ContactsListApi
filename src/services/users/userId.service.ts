@@ -1,14 +1,17 @@
 import AppDataSource from "../../data-source";
 import { User } from "../../entities/user.entities";
-import { IUserRes } from "../../interfaces";
-import { userSchemasRes } from "../../schemas";
+import { IUserContacts, IUserRes } from "../../interfaces";
+import { userContactSchema } from "../../schemas";
 
-const userIdService = async (id: string): Promise<IUserRes> => {
+const userIdService = async (id: string): Promise<IUserContacts> => {
   const userRepository = AppDataSource.getRepository(User);
 
-  const user = await userRepository.findOneBy({ id: id });
+  const user = await userRepository.findOne({
+    where: { id: id },
+    relations: ["contacts", "contacts.emails", "contacts.phones"],
+  });
 
-  const userWithoutPassword = await userSchemasRes.validate(user, {
+  const userWithoutPassword = await userContactSchema.validate(user, {
     stripUnknown: true,
   });
 

@@ -24,6 +24,8 @@ const contactSchemaReq: SchemaOf<IContactsReq> = Yup.object().shape({
   phones: Yup.array().of(phonesSchemaReq).required(),
   emails: Yup.array().of(emailsSchemaReq).required(),
   imageUrl: Yup.string().notRequired().nullable(true),
+  githubUrl: Yup.string().notRequired().nullable(true),
+  linkedinUrl: Yup.string().notRequired().nullable(true),
 });
 
 const contactSchemaRes: SchemaOf<IContactsRes> = Yup.object().shape({
@@ -31,7 +33,9 @@ const contactSchemaRes: SchemaOf<IContactsRes> = Yup.object().shape({
   phones: Yup.array().of(phonesSchemaRes).notRequired(),
   createdAt: Yup.date().notRequired(),
   updatedAt: Yup.date().notRequired(),
-  imageUrl: Yup.string().nullable(true).notRequired(),
+  imageUrl: Yup.string().notRequired().nullable(true),
+  githubUrl: Yup.string().notRequired().nullable(true),
+  linkedinUrl: Yup.string().notRequired().nullable(true),
   name: Yup.string().notRequired(),
   id: Yup.string().notRequired(),
 });
@@ -48,14 +52,18 @@ const allsContactsSchema: SchemaOf<IContactsuserRes[]> =
 const contactsIdSchema: SchemaOf<IContactsRes[]> = Yup.array(contactSchemaRes);
 
 const updatecontactSchemasReq: SchemaOf<IUpdateContact> = Yup.object().shape({
-  imageUrl: Yup.string().nullable().notRequired(),
+  imageUrl: Yup.string().notRequired().nullable(true),
+  githubUrl: Yup.string().notRequired().nullable(true),
+  linkedinUrl: Yup.string().notRequired().nullable(true),
   emails: Yup.array().of(updateEmailsSchemaReq).notRequired(),
   phones: Yup.array().of(updatePhonesSchemaRes).notRequired(),
   name: Yup.string().notRequired(),
 });
 
 const contactSchemas: SchemaOf<IContact> = Yup.object().shape({
-  imageUrl: Yup.string().nullable().notRequired(),
+  imageUrl: Yup.string().notRequired().nullable(true),
+  githubUrl: Yup.string().notRequired().nullable(true),
+  linkedinUrl: Yup.string().notRequired().nullable(true),
   emails: Yup.array().of(updateEmailsSchemaReq).notRequired(),
   phones: Yup.array().of(updatePhonesSchemaRes).notRequired(),
   name: Yup.string().notRequired(),

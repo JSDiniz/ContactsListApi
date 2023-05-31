@@ -6,7 +6,9 @@ export interface IContactsReq {
   name: string;
   phones: Array<IPhonesReq>;
   emails: Array<IEmailsReq>;
-  imageUrl: string;
+  imageUrl?: string | null | undefined;
+  githubUrl?: string | null | undefined;
+  linkedinUrl?: string | null | undefined;
 }
 
 export interface IContactsRes {
@@ -16,7 +18,9 @@ export interface IContactsRes {
   updatedAt: Date;
   phones: Array<IPhonesRes>;
   emails: Array<IEmailsRes>;
-  imageUrl: string;
+  imageUrl?: string | null | undefined;
+  githubUrl?: string | null | undefined;
+  linkedinUrl?: string | null | undefined;
 }
 
 export interface IContactsuserRes extends IContactsRes {
@@ -27,7 +31,9 @@ export interface IUpdateContact {
   name?: string;
   phones?: Array<IPhones>;
   emails?: Array<IEmails>;
-  imageUrl?: string;
+  imageUrl?: string | null | undefined;
+  githubUrl?: string | null | undefined;
+  linkedinUrl?: string | null | undefined;
 }
 
 export interface IContact {
@@ -35,5 +41,7 @@ export interface IContact {
   name: string;
   phones: Array<IPhones>;
   emails: Array<IEmails>;
-  imageUrl: string;
+  imageUrl?: string | null | undefined;
+  githubUrl?: string | null | undefined;
+  linkedinUrl?: string | null | undefined;
 }

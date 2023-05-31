@@ -11,6 +11,16 @@ import userIdService from "./users/userId.service";
 // Contacts
 import createContactService from "./contacts/createContact.service";
 import listContactsService from "./contacts/listContacts.service";
+import listContactsUserService from "./contacts/listContactsUser.service";
+import contactIdService from "./contacts/contactId.service";
+import deleteContactService from "./contacts/deleteContact.service";
+import updateContactService from "./contacts/updateContact.service";
+
+// Emails
+import createEmailsService from "./emails/createEmails.service";
+import deleteEmailService from "./emails/deleteEmail.service";
+import createPhonesService from "./phones/createPhones.service";
+import deletePhoneService from "./phones/deletePhone.service";
 
 export {
   sessionService,
@@ -21,4 +31,12 @@ export {
   userIdService,
   createContactService,
   listContactsService,
+  listContactsUserService,
+  contactIdService,
+  deleteContactService,
+  updateContactService,
+  createPhonesService,
+  deletePhoneService,
+  createEmailsService,
+  deleteEmailService,
 };

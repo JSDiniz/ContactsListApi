@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 import { SchemaOf } from "yup";
-import { IPhonesReq, IPhonesRes } from "../../interfaces";
+import { IPhonesReq, IPhonesRes, IPhones } from "../../interfaces";
 
 const phonesSchemaReq: SchemaOf<IPhonesReq> = Yup.object().shape({
   phone: Yup.string()
@@ -19,4 +19,16 @@ const phonesSchemaRes: SchemaOf<IPhonesRes> = Yup.object().shape({
   id: Yup.string().notRequired(),
 });
 
-export { phonesSchemaReq, phonesSchemaRes };
+const updatePhonesSchemaRes: SchemaOf<IPhones> = Yup.object().shape({
+  phone: Yup.string().notRequired(),
+  id: Yup.string().notRequired(),
+});
+
+const phonesSchema: SchemaOf<IPhonesReq[]> = Yup.array(phonesSchemaReq);
+
+export {
+  phonesSchemaReq,
+  phonesSchemaRes,
+  updatePhonesSchemaRes,
+  phonesSchema,
+};

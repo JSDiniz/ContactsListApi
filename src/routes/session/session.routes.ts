@@ -1,8 +1,14 @@
-import {Router} from "express"
+import { Router } from "express";
 import { sessionController } from "../../controllers";
+import { validDataMiddleware } from "../../middlewares";
+import { sessionSchemaReq } from "../../schemas";
 
-const sessionRouter = Router()
+const sessionRouter = Router();
 
-sessionRouter.post("", sessionController);
+sessionRouter.post(
+  "",
+  validDataMiddleware(sessionSchemaReq),
+  sessionController
+);
 
-export default sessionRouter
+export default sessionRouter;

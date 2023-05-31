@@ -5,13 +5,14 @@ import { User } from "../../entities/user.entities";
 import { AppError } from "../../errors/AppError";
 import { compare } from "bcryptjs";
 import { ISessionReq, ISessionRes } from "../../interfaces";
-import { userSchemasRes } from "../../schemas";
-
+import { sessionSchemaRes } from "../../schemas";
 
 const sessionService = async (body: ISessionReq): Promise<ISessionRes> => {
-
   const userRepository = AppDataSource.getRepository(User);
-  const findUser = await userRepository.findOne({where: { email: body.email }});
+  const findUser = await userRepository.findOne({
+    where: { email: body.email },
+    relations: ["contacts", "contacts.emails", "contacts.phones"],
+  });
 
   if (!findUser) {
     throw new AppError("Email or password invalid", 403);
@@ -39,7 +40,7 @@ const sessionService = async (body: ISessionReq): Promise<ISessionRes> => {
     }
   );
 
-  const user = await userSchemasRes.validate(findUser, {
+  const user = await sessionSchemaRes.validate(findUser, {
     stripUnknown: true,
   });
 

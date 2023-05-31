@@ -1,6 +1,12 @@
 import * as Yup from "yup";
 import { SchemaOf } from "yup";
-import { IUserReq, IUserRes, IUserUpdate } from "../../interfaces";
+import {
+  IUserContacts,
+  IUserReq,
+  IUserRes,
+  IUserUpdate,
+} from "../../interfaces";
+import { contactSchemaRes } from "../contacts/contacts.schemas";
 
 const userSchemasReq: SchemaOf<IUserReq> = Yup.object().shape({
   name: Yup.string()
@@ -34,7 +40,20 @@ const userSchemasRes: SchemaOf<IUserRes> = Yup.object().shape({
   id: Yup.string().notRequired(),
 });
 
-const allUsersSchema: SchemaOf<IUserRes[]> = Yup.array(userSchemasRes);
+const userContactSchema: SchemaOf<IUserContacts> = Yup.object().shape({
+  contacts: Yup.array().of(contactSchemaRes).notRequired(),
+  updatedAt: Yup.date().notRequired(),
+  createdAt: Yup.date().notRequired(),
+  isActive: Yup.boolean().notRequired(),
+  isAdmin: Yup.boolean().notRequired(),
+  imageUrl: Yup.string().nullable().notRequired(),
+  phone: Yup.string().notRequired(),
+  email: Yup.string().email().notRequired(),
+  name: Yup.string().notRequired(),
+  id: Yup.string().notRequired(),
+});
+
+const allUsersSchema: SchemaOf<IUserContacts[]> = Yup.array(userContactSchema);
 
 const updateUserSchemasReq: SchemaOf<IUserUpdate> = Yup.object().shape({
   name: Yup.string()
@@ -55,4 +74,10 @@ const updateUserSchemasReq: SchemaOf<IUserUpdate> = Yup.object().shape({
   isActive: Yup.boolean().notRequired(),
 });
 
-export { userSchemasReq, userSchemasRes, allUsersSchema, updateUserSchemasReq };
+export {
+  userSchemasReq,
+  userSchemasRes,
+  userContactSchema,
+  allUsersSchema,
+  updateUserSchemasReq,
+};

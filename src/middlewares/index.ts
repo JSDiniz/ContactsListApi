@@ -7,6 +7,12 @@ import verifyUserOrAdminMiddleware from "./verifyUserOrAdmin.middleware";
 import userDataUpdateMiddleware from "./userDataUpdate.middleware";
 import userUpdateIsActiveMiddleware from "./userUpdateIsActive.middleware";
 import contactExistMiddleware from "./contactExist.middleware";
+import contactNotExistMiddleware from "./contactNotExist.middleware";
+import verifyYouOwnerTheContactOrAdminMiddleware from "./verifyContactIsFromUser.middleware";
+import emailExistMiddleware from "./emailExist.middleware";
+import emailNotExistMiddleware from "./emailNotExist.middleware";
+import phoneExistMiddleware from "./phoneExist.middleware";
+import phoneNotExistMiddleware from "./phoneNotExist.middleware";
 
 export {
   validDataMiddleware,
@@ -18,4 +24,10 @@ export {
   userDataUpdateMiddleware,
   userUpdateIsActiveMiddleware,
   contactExistMiddleware,
+  contactNotExistMiddleware,
+  verifyYouOwnerTheContactOrAdminMiddleware,
+  phoneExistMiddleware,
+  phoneNotExistMiddleware,
+  emailExistMiddleware,
+  emailNotExistMiddleware,
 };

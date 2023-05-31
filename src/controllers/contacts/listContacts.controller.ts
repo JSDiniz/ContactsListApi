@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { listContactsSevice } from "../../services";
+import { listContactsService } from "../../services";
 
 const listContactsController = async (req: Request, res: Response) => {
-  const data = await listContactsSevice();
+  const data = await listContactsService();
   return res.status(200).json(data);
 };
 

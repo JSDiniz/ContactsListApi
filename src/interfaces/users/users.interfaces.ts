@@ -1,3 +1,5 @@
+import { IContact, IContactsRes } from "../contacts/contacts.interfaces";
+
 export interface IUserReq {
   name: string;
   email: string;
@@ -26,4 +28,14 @@ export interface IUserUpdate {
   imageUrl?: string;
   isAdmin?: boolean;
   isActive?: boolean;
+}
+
+export interface IUser {
+  id: string;
+  name: string;
+  contacts: Array<IContact>;
+}
+
+export interface IUserContacts extends IUserRes {
+  contacts: Array<IContactsRes>;
 }

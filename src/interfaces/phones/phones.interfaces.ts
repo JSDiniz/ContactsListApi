@@ -8,3 +8,8 @@ export interface IPhonesRes {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface IPhones {
+  id: string;
+  phone: string;
+}

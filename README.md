@@ -1,12 +1,12 @@
 # Welcome to the Contact List API!   <img align="center" width="3%" alt="Contact List" src="https://cdn.icon-icons.com/icons2/2420/PNG/512/contact_address_book_icon_146880.png" />
 
-Contact List is a contact scheduling API that aims to simulate a contact list. Where the logged in user can register his contacts, list them, update them, add more than one phone number and email for the same contact and delete them.
+Contact List is an API that aims to simulate a list of contacts. Where the logged in user can register his contacts, list them, update them, add more than one phone number or email for the same contact and delete them.
 
-Users, in addition to being able to register their contacts, can add relevant information such as Linkedin and Github, making the application more versatile.
+Users, in addition to being able to register their contacts, can add relevant information such as Portfolio, Linkedin and Github, making the application more versatile.
 
 It is also possible to create an administrator account, but it must be activated manually in the bank, by default isAdmin is false.
 
-All added contacts will only be accessible by customer or admin.
+All added contacts will only be accessible by the user or administrator.
 
 ## Diagram <img align="center" width="5%" alt="Diagram" src="https://cdn.icon-icons.com/icons2/3780/PNG/512/workflow_diagram_plan_sitemap_planning_flowchart_hierarchy_management_network_process_icon_231904.png" />
 

@@ -10,7 +10,7 @@ All added contacts will only be accessible by the user or administrator.
 
 ## Diagram <img align="center" width="5%" alt="Diagram" src="https://cdn.icon-icons.com/icons2/3780/PNG/512/workflow_diagram_plan_sitemap_planning_flowchart_hierarchy_management_network_process_icon_231904.png" />
 
-![Library](Contacts List Api-Diagram.png)
+![Library](ContactsListApi-Diagram.png)
 
 ## Documentation
 * Project was dockerized by Insomnia.

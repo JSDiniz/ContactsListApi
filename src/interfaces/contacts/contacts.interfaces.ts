@@ -1,6 +1,6 @@
 import { IEmails, IEmailsReq, IEmailsRes } from "../emails/emails.interfaces";
 import { IPhones, IPhonesReq, IPhonesRes } from "../phones/phones.interfaces";
-import { IUserRes } from "../users/users.interfaces";
+import { IUserContactsAdmin } from "../users/users.interfaces";
 
 export interface IContactsReq {
   name: string;
@@ -9,6 +9,7 @@ export interface IContactsReq {
   imageUrl?: string | null | undefined;
   githubUrl?: string | null | undefined;
   linkedinUrl?: string | null | undefined;
+  portfolioUrl?: string | null | undefined;
 }
 
 export interface IContactsRes {
@@ -21,10 +22,11 @@ export interface IContactsRes {
   imageUrl?: string | null | undefined;
   githubUrl?: string | null | undefined;
   linkedinUrl?: string | null | undefined;
+  portfolioUrl?: string | null | undefined;
 }
 
 export interface IContactsuserRes extends IContactsRes {
-  users: IUserRes;
+  users: IUserContactsAdmin;
 }
 
 export interface IUpdateContact {
@@ -34,6 +36,7 @@ export interface IUpdateContact {
   imageUrl?: string | null | undefined;
   githubUrl?: string | null | undefined;
   linkedinUrl?: string | null | undefined;
+  portfolioUrl?: string | null | undefined;
 }
 
 export interface IContact {
@@ -44,4 +47,5 @@ export interface IContact {
   imageUrl?: string | null | undefined;
   githubUrl?: string | null | undefined;
   linkedinUrl?: string | null | undefined;
+  portfolioUrl?: string | null | undefined;
 }

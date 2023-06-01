@@ -29,6 +29,9 @@ class Contacts {
   @Column({ nullable: true })
   linkedinUrl: string;
 
+  @Column({ nullable: true })
+  portfolioUrl: string;
+
   @CreateDateColumn({ type: "date" })
   createdAt: Date;
 

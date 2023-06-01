@@ -12,6 +12,7 @@ import {
   userDataUpdateMiddleware,
   userExistsMiddleware,
   userIsActiveMiddleware,
+  userNotExistsMiddleware,
   validDataMiddleware,
   validTokenMiddleware,
   verifyUserOrAdminMiddleware,
@@ -20,7 +21,12 @@ import { updateUserSchemasReq, userSchemasReq } from "../../schemas";
 
 const userRouter = Router();
 
-userRouter.post("", validDataMiddleware(userSchemasReq), createUserController);
+userRouter.post(
+  "",
+  validDataMiddleware(userSchemasReq),
+  userExistsMiddleware,
+  createUserController
+);
 
 userRouter.get(
   "",
@@ -32,7 +38,7 @@ userRouter.get(
 userRouter.get(
   "/:id",
   validTokenMiddleware,
-  userExistsMiddleware,
+  userNotExistsMiddleware,
   userIsActiveMiddleware,
   verifyUserOrAdminMiddleware,
   userIdController
@@ -43,7 +49,7 @@ userRouter.patch(
   validTokenMiddleware,
   userDataUpdateMiddleware,
   validDataMiddleware(updateUserSchemasReq),
-  userExistsMiddleware,
+  userNotExistsMiddleware,
   updateUserIsActiveOrAdminMiddleware,
   verifyUserOrAdminMiddleware,
   updateUserController
@@ -52,7 +58,7 @@ userRouter.patch(
 userRouter.delete(
   "/:id",
   validTokenMiddleware,
-  userExistsMiddleware,
+  userNotExistsMiddleware,
   verifyUserOrAdminMiddleware,
   userIsActiveMiddleware,
   deleteUserController

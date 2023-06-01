@@ -2,6 +2,7 @@
 import {
   IUser,
   IUserContacts,
+  IUserContactsAdmin,
   IUserReq,
   IUserRes,
   IUserUpdate,
@@ -30,6 +31,7 @@ export {
   IUserRes,
   IUserUpdate,
   IUser,
+  IUserContactsAdmin,
   IUserContacts,
   ISessionReq,
   ISessionRes,

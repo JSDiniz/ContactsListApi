@@ -13,7 +13,7 @@ const emailNotExistMiddleware = async (
   const email = await emailRepository.findOneBy({ id: req.params.id });
 
   if (!email) {
-    throw new AppError("Email does not exist!", 409);
+    throw new AppError("Email does not exist!", 404);
   }
 
   return next();

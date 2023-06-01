@@ -36,6 +36,12 @@ export interface IUser {
   contacts: Array<IContact>;
 }
 
+export interface IUserContactsAdmin {
+  id: string;
+  name: string;
+  email: string;
+}
+
 export interface IUserContacts extends IUserRes {
   contacts: Array<IContactsRes>;
 }

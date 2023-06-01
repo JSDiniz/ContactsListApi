@@ -9,6 +9,7 @@ export interface IContactsReq {
   imageUrl?: string | null | undefined;
   githubUrl?: string | null | undefined;
   linkedinUrl?: string | null | undefined;
+  portfolioUrl?: string | null | undefined;
 }
 
 export interface IContactsRes {
@@ -21,6 +22,7 @@ export interface IContactsRes {
   imageUrl?: string | null | undefined;
   githubUrl?: string | null | undefined;
   linkedinUrl?: string | null | undefined;
+  portfolioUrl?: string | null | undefined;
 }
 
 export interface IContactsuserRes extends IContactsRes {
@@ -34,6 +36,7 @@ export interface IUpdateContact {
   imageUrl?: string | null | undefined;
   githubUrl?: string | null | undefined;
   linkedinUrl?: string | null | undefined;
+  portfolioUrl?: string | null | undefined;
 }
 
 export interface IContact {
@@ -44,4 +47,5 @@ export interface IContact {
   imageUrl?: string | null | undefined;
   githubUrl?: string | null | undefined;
   linkedinUrl?: string | null | undefined;
+  portfolioUrl?: string | null | undefined;
 }

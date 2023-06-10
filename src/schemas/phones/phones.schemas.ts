@@ -20,7 +20,7 @@ const phonesSchemaRes: SchemaOf<IPhonesRes> = Yup.object().shape({
 });
 
 const updatePhonesSchemaRes: SchemaOf<IPhones> = Yup.object().shape({
-  phone: Yup.string().notRequired(),
+  phone: Yup.string().min(9).max(20).notRequired(),
   id: Yup.string().notRequired(),
 });
 

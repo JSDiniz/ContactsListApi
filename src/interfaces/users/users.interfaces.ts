@@ -33,6 +33,8 @@ export interface IUserUpdate {
 export interface IUser {
   id: string;
   name: string;
+  phone: string;
+  email: string;
   contacts: Array<IContact>;
 }
 

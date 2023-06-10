@@ -1,17 +1,19 @@
-import * as yup from "yup";
+import * as Yup from "yup";
 import { SchemaOf } from "yup";
 import { ISessionReq, IUser } from "../../interfaces";
 import { contactSchemas } from "../contacts/contacts.schemas";
 
-const sessionSchemaReq: SchemaOf<ISessionReq> = yup.object().shape({
-  email: yup.string().email("Must be a valid email").max(60).required(),
-  password: yup.string().required(),
+const sessionSchemaReq: SchemaOf<ISessionReq> = Yup.object().shape({
+  email: Yup.string().email("Must be a valid email").max(60).required(),
+  password: Yup.string().required(),
 });
 
-const sessionSchemaRes: SchemaOf<IUser> = yup.object().shape({
-  contacts: yup.array(contactSchemas).notRequired(),
-  name: yup.string().notRequired(),
-  id: yup.string().notRequired(),
+const sessionSchemaRes: SchemaOf<IUser> = Yup.object().shape({
+  contacts: Yup.array(contactSchemas).notRequired(),
+  email: Yup.string().email().notRequired(),
+  phone: Yup.string().notRequired(),
+  name: Yup.string().notRequired(),
+  id: Yup.string().notRequired(),
 });
 
 export { sessionSchemaReq, sessionSchemaRes };

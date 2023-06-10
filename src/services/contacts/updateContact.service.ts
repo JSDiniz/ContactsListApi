@@ -7,6 +7,8 @@ import { contactSchemaRes } from "../../schemas";
 const updateContactService = async (body: any, contactId: string) => {
   const contactRepository = AppDataSource.getRepository(Contacts);
 
+  console.log("update", body);
+
   const contact = await contactRepository
     .createQueryBuilder("contacts")
     .leftJoinAndSelect("contacts.phones", "phones")
